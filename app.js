@@ -1,6 +1,7 @@
 const getVideoBybvid = require('./src/main/getVideoBybvid');
 
-const bvid = 'BV1oa4y1X7Zt';
+const bvid = 'BV1vK4y1P74F'; // bv号 
+const Page = 41;   // p几
 const qn = {
   '4k': 120,
   '1080p60': 116,
@@ -13,7 +14,7 @@ const qn = {
 }
 
 const run = async () => {
-  await getVideoBybvid(bvid,qn['1080p']);
+  await getVideoBybvid(bvid,qn['1080p'],Page);
   console.log('下载完成——————');
   try {
   } catch {

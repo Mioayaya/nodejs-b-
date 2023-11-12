@@ -17,9 +17,16 @@ const replaceTitle = (title) => {
   return _title;
 }
 
-const getVideoBybvid = async (bvid,qn) => {
-  const { data } = await getWebInterface(bvid);
-  const { cid, title } = data;
+const getVideoBybvid = async (bvid,qn,Page) => {
+  const { data } = await getWebInterface(bvid);  
+  let { title } = data;
+  let cid;
+  if(Page) {
+    cid = data.pages[Page].cid;
+    title = `${title} ${data.pages[Page-1].part}`
+  }else {
+    cid = data.cid;
+  }
   const res = await getPlayurl(bvid,cid,qn);
   const url = res.data.durl[0].url
   const referer = getRefererByBvid(bvid);
