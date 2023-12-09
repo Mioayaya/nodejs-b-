@@ -1,7 +1,7 @@
 const getVideoBybvid = require('./src/main/getVideoBybvid');
 
-const bvid = 'BV1vK4y1P74F'; // bv号 
-const Page = 41;   // p几
+const bvid = 'BV1g8411y7vT'; // bv号 
+const Page = 0;   // p几
 const qn = {
   '4k': 120,
   '1080p60': 116,

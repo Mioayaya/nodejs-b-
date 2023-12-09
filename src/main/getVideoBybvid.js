@@ -10,10 +10,9 @@ const _path = appRoot.path;
 const deleteArr = ['/','*','"\"','?','"',':','|'];
 
 const replaceTitle = (title) => {
-  let _title = title;
-  for(let i in deleteArr) {
-    _title = _title.replace(deleteArr[i],"");
-  }
+  let _title = title;  
+  let arr = [..._title].filter(item=>deleteArr.indexOf(item)===-1);
+  _title = arr.join('');
   return _title;
 }
 
